@@ -8,7 +8,7 @@ List the open PRs:
 gh pr list --repo <repo> --state open --json number,title,author,headRefName,headRefOid,baseRefName,baseRefOid,milestone,isDraft,mergeable,mergeStateStatus,url
 ```
 
-A PR is ours when its branch starts with a Multica issue key in lowercase (for example `lum-73-refresh-key`). That issue is its sub-issue. All agents push as the human's GitHub account, so the author does not tell you whether a PR is ours; the branch does.
+A PR is ours when its branch starts with a Multica issue key in lowercase (for example `lum-73-refresh-key`). That issue is its sub-issue (for an Implement issue, built as one PR, the issue itself; "sub-issue" below means either). All agents push as the human's GitHub account, so the author does not tell you whether a PR is ours; the branch does.
 
 Never post anything on GitHub. Everything you report goes in Multica comments.
 
@@ -31,7 +31,7 @@ Skip PRs whose checks are all passing, or still pending or queued (the next run 
 - Report each failure once per head commit. Look at the sub-issue's comments first: if one already contains `CI failed on <first 7 characters of headRefOid>`, skip it.
 - Our PR: get the sub-issue with `multica issue get <KEY>`.
   - If the sub-issue is `done` or `cancelled`, skip it.
-  - Otherwise add the comment below on the sub-issue, without mentioning any agent: the sub-issue is assigned to the Delivery squad, and its Lead decides who fixes it. A sub-issue still assigned to the Builder directly (older ones) gets a mention of the Builder ([@Builder](mention://agent/<id>), id from `multica agent list --output json`) instead, unless it is `blocked` or an agent is already running on it (`multica issue runs <KEY>` shows a `running` or `queued` run).
+  - Otherwise add the comment below on the sub-issue, without mentioning any agent: the sub-issue is assigned to a squad (Delivery or Implement), and that squad's Lead decides who fixes it. A sub-issue still assigned to the Builder directly (older ones) gets a mention of the Builder ([@Builder](mention://agent/<id>), id from `multica agent list --output json`) instead, unless it is `blocked` or an agent is already running on it (`multica issue runs <KEY>` shows a `running` or `queued` run).
     ```
     CI failed on <short sha>: <check name> (<link>)
     <the first failing test or error line from gh run view <run-id> --repo <repo> --log-failed, at most 10 lines>
@@ -49,6 +49,8 @@ Only our PRs: never report a merge conflict on a PR that is not ours; its author
 Merge conflict on <short headRefOid> against <baseRefName>@<short baseRefOid>: <PR url>
 Restack it (gh stack rebase, then gh stack push) and cascade up the stack. A conflict you cannot resolve safely goes to the human.
 ```
+
+For a PR based on main that is not in a stack (an Implement issue), replace the second line with: `Merge origin/main into the branch and resolve the conflict. A conflict you cannot resolve safely goes to the human.`
 
 If the base is another sub-issue's branch, the conflict usually means a PR lower in the stack changed or was merged; say which.
 

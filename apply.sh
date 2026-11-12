@@ -48,6 +48,10 @@ for d in skills/*/; do
   [ -f "$d/skill.json" ] || continue
   name=$(jq -r .name "$d/skill.json"); desc=$(jq -r '.description // ""' "$d/skill.json")
   id=$(id_by_name "$existing" "$name")
+  # dump.sh writes "null" when the CLI returns no content; never upload that over a real skill
+  if [ "$(tr -d '[:space:]' < "${d}SKILL.md")" = null ]; then
+    echo "  skip skill $name: SKILL.md is null (content not exported)"; continue
+  fi
   if [ -n "$id" ]; then
     mc skill update "$id" --description "$desc" --content-file "${d}SKILL.md" >/dev/null && echo "updated skill $name"
   else
@@ -57,6 +61,7 @@ for d in skills/*/; do
   if [ -d "${d}files" ]; then
     find "${d}files" -type f ! -path '*/__pycache__/*' | sort | while read -r f; do
       p=${f#"${d}files/"}
+      [ "$(tr -d '[:space:]' < "$f")" = null ] && { echo "  skip file $p: content is null"; continue; }
       mc skill files upsert "$id" --path "$p" --content-file "$f" >/dev/null && echo "  file $p"
     done
   fi

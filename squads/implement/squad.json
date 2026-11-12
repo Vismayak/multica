@@ -1,0 +1,32 @@
+{
+  "name": "Implement",
+  "description": "Well-defined issues that fit in one PR: short plan, human approval, one PR, review",
+  "leader": "Implement Lead",
+  "members": [
+    {
+      "name": "Implement Lead",
+      "role": "leader"
+    },
+    {
+      "name": "Planner",
+      "role": "Writes a short single-PR plan on the issue and revises it on feedback"
+    },
+    {
+      "name": "Builder",
+      "role": "Implements the approved plan as one PR on the issue itself"
+    },
+    {
+      "name": "Reviewer A",
+      "role": "Reviews PRs for correctness and tests"
+    },
+    {
+      "name": "Reviewer B",
+      "role": "Reviews PRs for security, maintainability and operations"
+    },
+    {
+      "name": "Senior Reviewer",
+      "role": "final check before human review"
+    }
+  ],
+  "human_members": []
+}

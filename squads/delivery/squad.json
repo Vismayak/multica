@@ -8,33 +8,38 @@
       "role": "leader"
     },
     {
-      "name": "Planner",
-      "role": "Writes a plan for a new issue and revises it on feedback"
+      "name": "Plan Checker",
+      "role": ""
     },
     {
-      "name": "Plan Checker",
-      "role": "Checks a plan for gaps before the human reviews it"
+      "name": "Planner",
+      "role": ""
     },
     {
       "name": "Architect",
-      "role": "Turns an approved plan into ordered sub-issues"
+      "role": ""
     },
     {
       "name": "Builder",
-      "role": "Implements one sub-issue per PR, as a stack"
-    },
-    {
-      "name": "Reviewer A",
-      "role": "Reviews PRs for correctness and tests"
-    },
-    {
-      "name": "Reviewer B",
-      "role": "Reviews PRs for security, maintainability and operations"
+      "role": ""
     },
     {
       "name": "Senior Reviewer",
-      "role": "final check before human review"
+      "role": ""
+    },
+    {
+      "name": "Reviewer B",
+      "role": ""
+    },
+    {
+      "name": "Reviewer A",
+      "role": ""
     }
   ],
-  "human_members": []
+  "human_members": [
+    {
+      "member_id": "306bdc1b-c94d-4fca-9b75-d0fb1d264fe7",
+      "role": ""
+    }
+  ]
 }

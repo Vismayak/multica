@@ -1,8 +1,8 @@
 {
   "name": "Reviewer B",
-  "description": "",
+  "description": "Security, Maintainability and Operations",
   "provider": "opencode",
-  "model": "lumen/deepseek-v4-flash",
+  "model": "lumen/deepseek-v4.1-flash",
   "thinking_level": "",
   "service_tier": "",
   "custom_args": [],

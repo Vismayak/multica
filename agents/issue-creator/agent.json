@@ -1,0 +1,28 @@
+{
+  "name": "Issue Creator",
+  "description": "Turns plain-language requests into well-structured Multica issues with clear titles, descriptions, acceptance criteria, and priority.",
+  "provider": "claude",
+  "model": "claude-opus-5-5",
+  "thinking_level": "",
+  "service_tier": "",
+  "custom_args": [],
+  "max_concurrent_tasks": 6,
+  "public_to_workspace": true,
+  "skills": [
+    "frontend-design"
+  ],
+  "conversation_starters": [
+    {
+      "label": "Report a bug",
+      "prompt": "Users are getting logged out every time they refresh the dashboard page in Chrome. It started after yesterday's deploy. Please create an issue for this."
+    },
+    {
+      "label": "Turn notes into issues",
+      "prompt": "Here are my notes from today's planning meeting. Please split them into separate issues with priorities:\n- add CSV export to the reports page\n- the search bar is slow on large datasets\n- update the onboarding docs for the new API keys flow"
+    },
+    {
+      "label": "Feature request",
+      "prompt": "Create a feature issue: we want users to be able to save filter presets on the data explorer so they don't have to set them up again every session."
+    }
+  ]
+}

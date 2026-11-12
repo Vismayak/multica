@@ -1,0 +1,13 @@
+{
+  "name": "grill-me",
+  "description": "A relentless interview to sharpen a plan or design.",
+  "config": {
+    "origin": {
+      "owner": "mattpocock",
+      "repo": "skills",
+      "skill": "grill-me",
+      "source_url": "https://www.skills.sh/mattpocock/skills/grill-me",
+      "type": "skills_sh"
+    }
+  }
+}

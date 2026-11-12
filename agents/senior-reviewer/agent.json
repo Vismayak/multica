@@ -1,13 +1,13 @@
 {
   "name": "Senior Reviewer",
   "description": "",
-  "provider": "codex",
-  "model": "",
+  "provider": "opencode",
+  "model": "lumen/glm-5.3",
   "thinking_level": "",
   "service_tier": "",
   "custom_args": [],
   "max_concurrent_tasks": 6,
-  "public_to_workspace": false,
+  "public_to_workspace": true,
   "skills": [],
   "conversation_starters": []
 }
